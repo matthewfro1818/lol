@@ -118,10 +118,8 @@ class ExtrasMenuState extends MusicBeatState
 	{
                var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                var menuItem:FlxSprite = new FlxSprite(269, 241).loadGraphic(Paths.image('mainmenu/mods')); //Thanks to EIT for the tutorial
-               menuItem.scale.x = scale * 2;
-               menuItem.scale.y = scale * 2;
                menuItem.ID = 0;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 0.70));
+               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
                menuItems.add(menuItem);
                var scr:Float = (optionShit.length - 4) * 0.135;
                if (optionShit.length < 6) scr = 0;
@@ -131,10 +129,8 @@ class ExtrasMenuState extends MusicBeatState
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(269, 482).loadGraphic(Paths.image('mainmenu/discord')); //Thanks to EIT for the tutorial
-               menuItem.scale.x = scale * 2;
-               menuItem.scale.y = scale * 2;
                menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 0.70));
+               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
                menuItems.add(menuItem);
                scr = (optionShit.length - 4) * 0.135;
                if (optionShit.length < 6) scr = 1;
@@ -144,10 +140,8 @@ class ExtrasMenuState extends MusicBeatState
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(269, 702).loadGraphic(Paths.image('mainmenu/credits')); //Thanks to EIT for the tutorial
-               menuItem.scale.x = scale * 2;
-               menuItem.scale.y = scale * 2;
                menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 0.70));
+               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
                menuItems.add(menuItem);
                scr = (optionShit.length - 4) * 0.135;
                if (optionShit.length < 6) scr = 1;
@@ -157,6 +151,7 @@ class ExtrasMenuState extends MusicBeatState
 	       
 	       var gfDance:FlxSprite; // to put the gf on the menu mme
 	       gfDance = new FlxSprite(238, 199).loadGraphic(Paths.image('backgrounds/$name'));
+               gfDance.setGraphicSize(Std.int(gfDance.width * 1));
 	       add(gfDance);
 	       if (gfDance != null) {
 	           danceLeft = !danceLeft;
