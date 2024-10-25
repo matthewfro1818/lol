@@ -4,6 +4,8 @@ import flixel.FlxObject;
 import flixel.effects.FlxFlicker;
 import lime.app.Application;
 import states.editors.MasterEditorMenu;
+import states.MainMenuState;
+import states.FreeplayState;
 import options.OptionsState;
 import flixel.FlxSprite;
 
@@ -267,7 +269,7 @@ class PlayMenuState extends MusicBeatState
 				selectedSomethin = true;
 				FlxG.mouse.visible = false;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new TitleState());
+				MusicBeatState.switchState(new MainMenuState());
 			}
 
 			if (controls.ACCEPT || (FlxG.mouse.justPressed && allowMouse))
