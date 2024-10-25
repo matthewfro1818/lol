@@ -64,16 +64,14 @@ class CoolUtil
 	inline public static function dominantColor(sprite:flixel.FlxSprite):Int
 	{
 		var countByColor:Map<Int, Int> = [];
-		for(col in 0...sprite.frameWidth)
-		{
-			for(row in 0...sprite.frameHeight)
-			{
-				var colorOfThisPixel:FlxColor = sprite.pixels.getPixel32(col, row);
-				if(colorOfThisPixel.alphaFloat > 0.05)
-				{
-					colorOfThisPixel = FlxColor.fromRGB(colorOfThisPixel.red, colorOfThisPixel.green, colorOfThisPixel.blue, 255);
-					var count:Int = countByColor.exists(colorOfThisPixel) ? countByColor[colorOfThisPixel] : 0;
-					countByColor[colorOfThisPixel] = count + 1;
+		for(col in 0...sprite.frameWidth) {
+			for(row in 0...sprite.frameHeight) {
+				var colorOfThisPixel:Int = sprite.pixels.getPixel32(col, row);
+				if(colorOfThisPixel != 0) {
+					if(countByColor.exists(colorOfThisPixel))
+						countByColor[colorOfThisPixel] = countByColor[colorOfThisPixel] + 1;
+					else if(countByColor[colorOfThisPixel] != 13520687 - (2*13520687))
+						countByColor[colorOfThisPixel] = 1;
 				}
 			}
 		}
@@ -81,16 +79,27 @@ class CoolUtil
 		var maxCount = 0;
 		var maxKey:Int = 0; //after the loop this will store the max color
 		countByColor[FlxColor.BLACK] = 0;
-		for(key => count in countByColor)
-		{
-			if(count >= maxCount)
-			{
-				maxCount = count;
+		for(key in countByColor.keys()) {
+			if(countByColor[key] >= maxCount) {
+				maxCount = countByColor[key];
 				maxKey = key;
 			}
 		}
 		countByColor = [];
 		return maxKey;
+	}
+
+	public static function getMinAndMax(value1:Float, value2:Float):Array<Float>
+	{
+		var minAndMaxs = new Array<Float>();
+
+		var min = Math.min(value1, value2);
+		var max = Math.max(value1, value2);
+
+		minAndMaxs.push(min);
+		minAndMaxs.push(max);
+		
+		return minAndMaxs;
 	}
 
 	inline public static function numberArray(max:Int, ?min = 0):Array<Int>
