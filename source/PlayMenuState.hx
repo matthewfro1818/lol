@@ -126,7 +126,6 @@ class PlayMenuState extends MusicBeatState
                if (optionShit.length < 6) scr = 0;
                menuItem.scrollFactor.set(0, scr);
                //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-               menuItem.updateHitbox();
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(912, 462).loadGraphic(Paths.image('mainmenu/golden')); //Thanks to EIT for the tutorial
@@ -137,7 +136,6 @@ class PlayMenuState extends MusicBeatState
                if (optionShit.length < 6) scr = 1;
                menuItem.scrollFactor.set(1, scr);
                //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-               menuItem.updateHitbox();
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(912, 662).loadGraphic(Paths.image('mainmenu/daveandbambibutton')); //Thanks to EIT for the tutorial
@@ -148,7 +146,6 @@ class PlayMenuState extends MusicBeatState
                if (optionShit.length < 6) scr = 1;
                menuItem.scrollFactor.set(1, scr);
                //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-               menuItem.updateHitbox();
 	}
 
 	var selectedSomethin:Bool = false;
