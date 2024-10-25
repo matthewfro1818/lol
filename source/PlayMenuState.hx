@@ -305,15 +305,12 @@ class PlayMenuState extends MusicBeatState
 					{
 						switch (option)
 						{
-							case 'extrended':
-								MusicBeatState.switchState(new states.FreeplayState());
-								PlayState.isUniverse = true;
+						    case 'extrended':
+							MusicBeatState.switchState(new states.FreeplayState());
 						    case 'golden':
-								MusicBeatState.switchState(new states.FreeplayState());
-								PlayState.isGolden = true;
-							case 'daveandbambi':
-								MusicBeatState.switchState(new states.FreeplayState());
-								PlayState.isDaveAndBambi = true;
+							MusicBeatState.switchState(new states.FreeplayState());
+						    case 'daveandbambi':
+							MusicBeatState.switchState(new states.FreeplayState());
 						}
 					});
 					
