@@ -135,7 +135,6 @@ class MainMenuState extends MusicBeatState
                if (optionShit.length < 6) scr = 0;
                menuItem.scrollFactor.set(0, scr);
                //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-               menuItem.updateHitbox();
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(269, 482).loadGraphic(Paths.image('mainmenu/extras')); //Thanks to EIT for the tutorial
@@ -146,7 +145,6 @@ class MainMenuState extends MusicBeatState
                if (optionShit.length < 6) scr = 1;
                menuItem.scrollFactor.set(1, scr);
                //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-               menuItem.updateHitbox();
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(269, 702).loadGraphic(Paths.image('mainmenu/options')); //Thanks to EIT for the tutorial
@@ -157,9 +155,9 @@ class MainMenuState extends MusicBeatState
                if (optionShit.length < 6) scr = 1;
                menuItem.scrollFactor.set(1, scr);
                //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-               menuItem.updateHitbox(); 
-	       
+
 	       var gfDance:FlxSprite; // to put the gf on the menu mme
+               var danceLeft:Bool = false;
 	       gfDance = new FlxSprite(238, 199).loadGraphic(Paths.image('backgrounds/$name'));
                gfDance.setGraphicSize(Std.int(gfDance.width * 1));
 	       add(gfDance);
