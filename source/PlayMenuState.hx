@@ -119,10 +119,8 @@ class PlayMenuState extends MusicBeatState
 	{
                var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                var menuItem:FlxSprite = new FlxSprite(269, 241).loadGraphic(Paths.image('mainmenu/extrended')); //Thanks to EIT for the tutorial
-               menuItem.scale.x = scale * 2;
-               menuItem.scale.y = scale * 2;
                menuItem.ID = 0;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 0.70));
+               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
                menuItems.add(menuItem);
                var scr:Float = (optionShit.length - 4) * 0.135;
                if (optionShit.length < 6) scr = 0;
@@ -132,10 +130,8 @@ class PlayMenuState extends MusicBeatState
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(912, 462).loadGraphic(Paths.image('mainmenu/golden')); //Thanks to EIT for the tutorial
-               menuItem.scale.x = scale * 2;
-               menuItem.scale.y = scale * 2;
                menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 0.70));
+               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
                menuItems.add(menuItem);
                scr = (optionShit.length - 4) * 0.135;
                if (optionShit.length < 6) scr = 1;
@@ -145,10 +141,8 @@ class PlayMenuState extends MusicBeatState
 		
                offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
                menuItem = new FlxSprite(912, 662).loadGraphic(Paths.image('mainmenu/daveandbambibutton')); //Thanks to EIT for the tutorial
-               menuItem.scale.x = scale * 2;
-               menuItem.scale.y = scale * 2;
                menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 0.70));
+               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
                menuItems.add(menuItem);
                scr = (optionShit.length - 4) * 0.135;
                if (optionShit.length < 6) scr = 1;
