@@ -116,36 +116,19 @@ class ExtrasMenuState extends MusicBeatState
 
 	function createMenuItem(name:String, x:Float, y:Float):FlxSprite
 	{
+	       if (optionShit[i] == 'nothing') {continue;}
                var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-               var menuItem:FlxSprite = new FlxSprite(269, 241).loadGraphic(Paths.image('mainmenu/mods')); //Thanks to EIT for the tutorial
-               menuItem.ID = 0;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
-               menuItems.add(menuItem);
-               var scr:Float = (optionShit.length - 4) * 0.135;
-               if (optionShit.length < 6) scr = 0;
-               menuItem.scrollFactor.set(0, scr);
-               //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-		
-               offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-               menuItem = new FlxSprite(269, 482).loadGraphic(Paths.image('mainmenu/discord')); //Thanks to EIT for the tutorial
-               menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
-               menuItems.add(menuItem);
-               scr = (optionShit.length - 4) * 0.135;
-               if (optionShit.length < 6) scr = 1;
-               menuItem.scrollFactor.set(1, scr);
-               //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-		
-               offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-               menuItem = new FlxSprite(269, 702).loadGraphic(Paths.image('mainmenu/credits')); //Thanks to EIT for the tutorial
-               menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
-               menuItems.add(menuItem);
-               scr = (optionShit.length - 4) * 0.135;
-               if (optionShit.length < 6) scr = 1;
-               menuItem.scrollFactor.set(1, scr);
-               //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-	       
+               var menuItem:FlxSprite = new FlxSprite(269, 241).loadGraphic(Paths.image('mainmenu/$name')); //Thanks to EIT for the tutorial
+	       menuItem.antialiasing = ClientPrefs.data.antialiasing;
+	       menuItems.add(menuItem);
+	       var scr:Float = (optionShit.length - 4) * 0.135;
+	       if (optionShit.length < 6)
+	       	scr = 0;
+	       menuItem.scrollFactor.set(0, scr);
+	       menuItem.setGraphicSize(Std.int(menuItem.width * 0.7));
+	       menuItem.updateHitbox();
+	       //menuItem.screenCenter(X);
+
 	       var gfDance:FlxSprite; // to put the gf on the menu mme
                var danceLeft:Bool = false;
 	       gfDance = new FlxSprite(238, 199).loadGraphic(Paths.image('backgrounds/$name'));
@@ -155,6 +138,19 @@ class ExtrasMenuState extends MusicBeatState
 	           danceLeft = !danceLeft;
 	           if (danceLeft) gfDance.animation.play('danceLeft');
 	       }
+		
+		switch (i)
+		{
+			case 0: 
+				menuItem.x = 269;
+				menuItem.y = 241;
+			case 1:
+				menuItem.x = 269;
+				menuItem.y = 482;
+			case 2:
+				menuItem.x = 269;
+				menuItem.y = 702;
+		}
 	}
 
 	var selectedSomethin:Bool = false;
