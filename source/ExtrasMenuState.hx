@@ -129,15 +129,11 @@ class ExtrasMenuState extends MusicBeatState
 	       menuItem.updateHitbox();
 	       //menuItem.screenCenter(X);
 
-	       var gfDance:FlxSprite; // to put the gf on the menu mme
+	       var gfDance:FlxSprite;
                var danceLeft:Bool = false;
 	       gfDance = new FlxSprite(238, 199).loadGraphic(Paths.image('backgrounds/$name'));
                gfDance.setGraphicSize(Std.int(gfDance.width * 1));
 	       add(gfDance);
-	       if (gfDance != null) {
-	           danceLeft = !danceLeft;
-	           if (danceLeft) gfDance.animation.play('danceLeft');
-	       }
 		
 		switch (i)
 		{
