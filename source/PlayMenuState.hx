@@ -119,35 +119,31 @@ class PlayMenuState extends MusicBeatState
 
 	function createMenuItem(name:String, x:Float, y:Float):FlxSprite
 	{
+	       if (optionShit[i] == 'nothing') {continue;}
                var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-               var menuItem:FlxSprite = new FlxSprite(269, 241).loadGraphic(Paths.image('mainmenu/extrended')); //Thanks to EIT for the tutorial
-               menuItem.ID = 0;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
-               menuItems.add(menuItem);
-               var scr:Float = (optionShit.length - 4) * 0.135;
-               if (optionShit.length < 6) scr = 0;
-               menuItem.scrollFactor.set(0, scr);
-               //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+               var menuItem:FlxSprite = new FlxSprite(269, 241).loadGraphic(Paths.image('mainmenu/$name')); //Thanks to EIT for the tutorial
+	       menuItem.antialiasing = ClientPrefs.data.antialiasing;
+	       menuItems.add(menuItem);
+	       var scr:Float = (optionShit.length - 4) * 0.135;
+	       if (optionShit.length < 6)
+	       	scr = 0;
+	       menuItem.scrollFactor.set(0, scr);
+	       menuItem.setGraphicSize(Std.int(menuItem.width * 0.7));
+	       menuItem.updateHitbox();
+	       //menuItem.screenCenter(X);
 		
-               offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-               menuItem = new FlxSprite(912, 462).loadGraphic(Paths.image('mainmenu/golden')); //Thanks to EIT for the tutorial
-               menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
-               menuItems.add(menuItem);
-               scr = (optionShit.length - 4) * 0.135;
-               if (optionShit.length < 6) scr = 1;
-               menuItem.scrollFactor.set(1, scr);
-               //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-		
-               offset = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-               menuItem = new FlxSprite(912, 662).loadGraphic(Paths.image('mainmenu/daveandbambibutton')); //Thanks to EIT for the tutorial
-               menuItem.ID = 1;
-               menuItem.setGraphicSize(Std.int(menuItem.width * 1));
-               menuItems.add(menuItem);
-               scr = (optionShit.length - 4) * 0.135;
-               if (optionShit.length < 6) scr = 1;
-               menuItem.scrollFactor.set(1, scr);
-               //menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+		switch (i)
+		{
+			case 0: 
+				menuItem.x = 912;
+				menuItem.y = 241;
+			case 1:
+				menuItem.x = 912;
+				menuItem.y = 462;
+			case 2:
+				menuItem.x = 912;
+				menuItem.y = 662;
+		}
 	}
 
 	var selectedSomethin:Bool = false;
