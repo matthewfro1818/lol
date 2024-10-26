@@ -117,7 +117,7 @@ class ExtrasMenuState extends MusicBeatState
 
 	function createMenuItem(name:String, x:Float, y:Float):FlxSprite
 	{
-		if (optionShit[i] == 'nothing') {continue;}
+		if (optionShit[i] == 'nothing') {}
 		var menuItem:FlxSprite = new FlxSprite(x, y).loadGraphic(Paths.image('mainmenu/$name'));
 		menuItem.updateHitbox();
 	       var scr:Float = (optionShit.length - 4) * 0.135;
