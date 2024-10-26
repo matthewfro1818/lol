@@ -126,8 +126,12 @@ class MainMenuState extends MusicBeatState
 
 	function createMenuItem(name:String, x:Float, y:Float):FlxSprite
 	{
+		if (optionShit[i] == 'nothing') {continue;}
 		var menuItem:FlxSprite = new FlxSprite(x, y).loadGraphic(Paths.image('mainmenu/$name'));
 		menuItem.updateHitbox();
+	       var scr:Float = (optionShit.length - 4) * 0.135;
+	       if (optionShit.length < 6)
+	       	scr = 0;
 		menuItem.antialiasing = ClientPrefs.data.antialiasing;
 		menuItem.scrollFactor.set();
 		menuItems.add(menuItem);
